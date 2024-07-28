@@ -6,6 +6,8 @@
 
 - commit
 
+  - ctrl + s 처럼 막 하는 것 보다는, 기능 하나 완성될 때마다 하는 걸 추
+
   - `git commit -m "<text>"`
   - `git commit -a -m "모든 변경 사항을 커밋"`
   - `git commit -p` <br>선택적으로 변경 사항을 스테이징. 특정 변경 사항만 선택해서 커밋
@@ -33,6 +35,25 @@
 
 - `git revert <commit hash>`<br>해당 변경 내역 revert
 
+- restore
+
+  - `git restore --staged <file name>`
+
+- log
+
+  - github에서 history 보는 것과 비슷함
+
+  - `git log --all --oneline`
+  - `git log --all --oneline --graph`
+
+- diff
+
+  - `git diff`
+  - `git diff {commit id}`
+  - `git diff {commit id}, {commit id}`
+
+  - `git difftool`: vim에서 gui처럼 보여줌, 그 외 옵션은 diff와 동일
+
 - pull request
 
   - `git remote add upstream <original repo url>`
@@ -47,20 +68,19 @@
 
 ---
 
-
 - `origin/main`: 로컬에 저장된 깃헙 main브랜치
 - `main`: 로컬에 저장된 main 브랜치
 
-	`git pull origin/main main`
+  `git pull origin/main main`
 
-	`git push origin/main main`
+  `git push origin/main main`
 
 ---
 
 "origin의 test브랜치에, 로컬 develop 브랜치 push"
 
-	1. `git switch develop`
+    1. `git switch develop`
 
-	2. 커밋
+    2. 커밋
 
-	3. `git push origin develop:test`
+    3. `git push origin develop:test`
