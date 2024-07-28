@@ -1,4 +1,4 @@
 - merge 기준
 - commit message 작성 방법
-- issue template 
-- pull request template 
+- issue template
+- pull request template
