@@ -16,10 +16,6 @@
   - `git commit --amend -m "수정된 커밋 메시지"`<br>마지막 커밋을 수정. 이전 커밋 메시지 변경 or 추가 변경 사항 포함 가능
   - `git commit -v` <br>스테이징된 변경 사항을 보여줌.
 
-- unstaging
-
-  - `git restore --staged <file>`
-
 - branch
 
   - `git branch`<br>브랜치 목록
