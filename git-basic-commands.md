@@ -1,6 +1,8 @@
 ### basic command
 
-`git init`
+- init
+
+  - "master"를 기본 브랜치로 리포지토리 생성
 
 `git add <filename>`
 
@@ -24,6 +26,7 @@
   - `git branch <branch name>`<br>브랜치 생성
   - `git branch -d <branch name>`<br> 브랜치 삭제
   - `git branch -m <branch name>`<br> 현재 브랜치 이름 변경
+    > `git branch -M main` 깃헙 올릴 때 보통 많이 사용, 로컬은 master, 깃헙 리포는 기본적으로 main을 사용하기에 master를 main으로 이름변경
   - `git checkout <branch name>`<br> 브랜치 전환
   - `git switch <branch name>`<br> 단순화된 버전의 git checkout
 
@@ -33,7 +36,17 @@
   - 해당 commit id로 회귀
   - `git reset --soft HEAD~1`<br>가장 최근 commit 취소
   - `git reset --soft HEAD~3`<br>최근부터 3개 commit 취소
-    > --soft: 변경 내역은 staging에 남김.
+  - `git reset --soft 커밋아이디`
+
+  > c123 | c 파일 생성<br>
+  > b123 | b 파일 생성<br>
+  > a123 | a 파일 생성<br>
+  >
+  > `git reset --hard b123` -> b123로 이동 -> a,b 파일 남음, c 파일 삭제
+  > `git reset --soft b123` -> b123로 이동 -> a,b 파일 남음, c 파일은 staging 상태 (add만 된 상태)
+  > `git reset --mixed b123` -> b123로 이동 -> a,b 파일 남음, c는 add 하기도 전 상태. (그냥 ctrl + s만 한 상태)
+  >
+  > 기본이 --mixed
 
 - restore
 
@@ -43,8 +56,7 @@
 
 - revert
 
-  -
-  - `git revert <commit id>`
+  - 이건쓰지마요뭔가뭔가이상함
 
 - log
 
@@ -79,6 +91,26 @@
 
   - cli면 원하는 코드만 남기고, `<<<<`, `>>>>`, `====` 지움. -> git add -> git commit
   - vscode면 상단 accept 어쩌구 버튼 누르고 git add -> git commit
+
+- push
+
+  - `git push 원격저장소주소 브랜치명`: 로컬 브랜치를 원격저장소에 push
+
+    - `-u`: 입력한 원격저장소 주소 이름을 기억하라는 뜻.
+
+    - `git push 주소 브랜치명`: 특정 로컬저장소 브랜치 -> 원격저장소
+    - `git push 주소`: 모든 로컬저장소 브랜치 -> 원격저장소
+
+- remote
+
+  - `git remote add origin 주소`: 주소를 origin 변수에 저장
+
+  - `git remote -v`: 만든 변수랑 해당 주소들 보여줌
+
+- pull
+
+  - `git pull` = `git fetch` + `git merge`
+    - fetch: 원격repo에 있는 commit 중, 로컬에 없는 신규 commit들을 가져옴.
 
 - pull request
 
