@@ -1,0 +1,2 @@
+- merge 기준
+- commit message 작성 방법
