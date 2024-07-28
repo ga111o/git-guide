@@ -29,15 +29,22 @@
 
 - reset
 
+  - 커밋 자체에 문제가 있을 때, 해당 커밋사항을 기반으로 작성한 모든 파일들에 문제가 생길 수 있음.
+  - 해당 commit id로 회귀
   - `git reset --soft HEAD~1`<br>가장 최근 commit 취소
   - `git reset --soft HEAD~3`<br>최근부터 3개 commit 취소
     > --soft: 변경 내역은 staging에 남김.
 
-- `git revert <commit hash>`<br>해당 변경 내역 revert
-
 - restore
 
+  - `git restore 파일명`: 최근 commit된 상태로 현재 파일의 수정 내역을 -
+  - `git restore --source 커밋id 파일명`: 해당 commit id로 파일을 되돌림
   - `git restore --staged <file name>`
+
+- revert
+
+  -
+  - `git revert <commit id>`
 
 - log
 
