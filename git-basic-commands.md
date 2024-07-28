@@ -54,6 +54,25 @@
 
   - `git difftool`: vim에서 gui처럼 보여줌, 그 외 옵션은 diff와 동일
 
+- merge
+
+  - 3-way merge: 가장 일반적임, 새로운 커밋을 만들어서, 거기에 두 브랜치를 합침.
+  - fast-forward merge: 새 브랜치에만 commit이 있고, 기준 브랜치에 신규 commit이 없을 경우, 기존 branch에 자동으로 통합 <br>`git merge --no-ff 브랜치명` 하면 강제로 3-way merge 시켜줌
+
+  - rebase: 3-way merge 말고 강제로 fast-forward를 하고 싶을 때, 즉, 커밋 내역을 브랜치 하나로만 남기고 싶을 때.
+
+    1. `git switch 브랜치명`
+    2. `git rebase main`
+    3. `git switch main`
+    4. `git merge 브랜치명`
+
+  - squash and merge: rebase의 업그레이드 버전?이라고 이해하면 좋을듯, rebase 할 브랜치의 모든 commit을 하나의 commit으로 만들고 rebase<br>`git merge --squash 브랜치명`
+
+- conflict 해결
+
+  - cli면 원하는 코드만 남기고, `<<<<`, `>>>>`, `====` 지움. -> git add -> git commit
+  - vscode면 상단 accept 어쩌구 버튼 누르고 git add -> git commit
+
 - pull request
 
   - `git remote add upstream <original repo url>`
